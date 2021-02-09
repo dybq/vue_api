@@ -7,7 +7,9 @@ app = Flask(__name__)
 CORS(app, resources={"/api/*": {"origins": "*"}})
 
 api = Api(app)
-
+@app.route('/index')
+def index():
+    return 'hello'
 
 class GetData(Resource):
     def get(self):
