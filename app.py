@@ -4,13 +4,10 @@ from mysql import *
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={"/api/*":{"origins": "*"}})
+CORS(app, resources={"/api/*": {"origins": "*"}})
 
 api = Api(app)
 
-@app.route("/")
-def index():
-    return redirect('http://localhost:8080')
 
 class GetData(Resource):
     def get(self):
