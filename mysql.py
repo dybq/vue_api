@@ -2,7 +2,7 @@ import pymysql
 import json
 
 def getData(tableName,*rowName):
-    con = pymysql.connect(host='localhost', user='root', password='daluosiNB', database='test_daluosi', port=3306)
+    con = pymysql.connect(host='localhost', user='root', password='daluosiNB', database='test_daluosi', port=3309)
     sql=f'select {",".join(rowName)} from {tableName}'
     cur=con.cursor()
     cur.execute(sql)
@@ -20,7 +20,7 @@ def getData(tableName,*rowName):
 
 
 def insert(data, tableName):
-    con = pymysql.connect(host='localhost', user='root', password='daluosiNB', database='test_daluosi', port=3306)
+    con = pymysql.connect(host='localhost', user='root', password='daluosiNB', database='test_daluosi', port=3309)
 
     sql = f"""insert into {tableName}(username, datetime, diff, remark) values ('{data["username"]}','{data["datetime"]}','{data["diff"]}','{data["remark"]}');"""
     print(sql)
@@ -31,7 +31,7 @@ def insert(data, tableName):
 
 
 def get_max_id():
-    con = pymysql.connect(host='localhost', user='root', password='daluosiNB', database='test_daluosi', port=3306)
+    con = pymysql.connect(host='localhost', user='root', password='daluosiNB', database='test_daluosi', port=3309)
 
     sql = f"""select id from make_group"""
     cur = con.cursor()
