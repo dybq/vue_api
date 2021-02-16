@@ -1,5 +1,5 @@
 import pymysql
-
+import json
 
 def getData(tableName,*rowName):
     con = pymysql.connect(host='localhost', user='root', password='daluosiNB', database='test_daluosi', port=3306)
@@ -11,7 +11,10 @@ def getData(tableName,*rowName):
     for  data in datas:
         d={}
         for i in enumerate(data):
-           d[rowName[i[0]]]=i[1]
+            if rowName[i[0]]=='datetime':
+                d[rowName[i[0]]]=json.dumps(i[0])
+            else:
+                d[rowName[i[0]]]=i[1]
         ls.append(d)
     return ls
 
