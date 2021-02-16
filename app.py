@@ -19,4 +19,4 @@ class GetData(Resource):
 api.add_resource(GetData, '/api/getdata')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
