@@ -12,7 +12,7 @@ def getData(tableName,*rowName):
         d={}
         for i in enumerate(data):
             if rowName[i[0]]=='datetime':
-                d[rowName[i[0]]]=json.dumps(i[0])
+                d[rowName[i[0]]]=i[1].strftime('%m-%d %H点-%M分')
             else:
                 d[rowName[i[0]]]=i[1]
         ls.append(d)
